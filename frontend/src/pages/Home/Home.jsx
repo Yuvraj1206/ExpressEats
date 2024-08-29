@@ -10,12 +10,15 @@ const Home = () => {
   const [search, setSearch] = useState("");
 
   const loadItems = async () => {
-    let response = await fetch("http://localhost:5000/api/foodData", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    let response = await fetch(
+      "https://expresseats-backend.onrender.com/api/foodData",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     response = await response.json();
     // console.log(response[0], response[1]);
@@ -52,39 +55,39 @@ const Home = () => {
         </div>
       </div>
 
-      {foodCat != []
-        ? foodCat.map((data) => {
-            return (
-              <div key={data._id}>
-                <div key={data._id} className="card_container_title">
-                  {data.CategoryName}
-                </div>
-
-                <div className="card_container">
-                  {food_items != []
-                    ? food_items
-                        .filter(
-                          (item) =>
-                            item.CategoryName === data.CategoryName &&
-                            item.name
-                              .toLowerCase()
-                              .includes(search.toLowerCase())
-                        )
-                        .map((item) => {
-                          return (
-                            <Card
-                              key={item._id}
-                              foodItem={item}
-                              options={item.options[0]}
-                            />
-                          );
-                        })
-                    : "Loading..."}
-                </div>
+      {foodCat != [] ? (
+        foodCat.map((data) => {
+          return (
+            <div key={data._id}>
+              <div key={data._id} className="card_container_title">
+                {data.CategoryName}
               </div>
-            );
-          })
-        : ""}
+
+              <div className="card_container">
+                {food_items != []
+                  ? food_items
+                      .filter(
+                        (item) =>
+                          item.CategoryName === data.CategoryName &&
+                          item.name.toLowerCase().includes(search.toLowerCase())
+                      )
+                      .map((item) => {
+                        return (
+                          <Card
+                            key={item._id}
+                            foodItem={item}
+                            options={item.options[0]}
+                          />
+                        );
+                      })
+                  : "Loading..."}
+              </div>
+            </div>
+          );
+        })
+      ) : (
+        <h2>Loading....</h2>
+      )}
     </div>
   );
 };

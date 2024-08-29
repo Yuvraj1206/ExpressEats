@@ -6,15 +6,18 @@ const Myorders = () => {
   const [orderData, setorderData] = useState([]);
 
   const fetchMyOrder = async () => {
-    let response = await fetch("http://localhost:5000/api/myOrderData", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: localStorage.getItem("userEmail"),
-      }),
-    });
+    let response = await fetch(
+      "https://expresseats-backend.onrender.com/api/myOrderData",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: localStorage.getItem("userEmail"),
+        }),
+      }
+    );
 
     response = await response.json();
     // console.log(response[0].reverse());

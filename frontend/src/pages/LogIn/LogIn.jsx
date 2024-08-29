@@ -12,13 +12,16 @@ const LogIn = () => {
     e.preventDefault();
     // Handle sign-up logic here
     // console.log("Form submitted", { email, password });
-    const response = await fetch("http://localhost:5000/api/loginuser", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
+    const response = await fetch(
+      "https://expresseats-backend.onrender.com/api/loginuser",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      }
+    );
 
     const json = await response.json();
     console.log(json);
