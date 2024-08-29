@@ -1,0 +1,12 @@
+
+.food-card{
+  margin-left: 40px;
+  margin-right: 5px;
+  margin-top: 20px;
+  background-color: rgba(67, 62, 62, 0.773);
+}
+
+.food-card select{
+  color: aliceblue;
+  padding: 2px 2px;
+}
