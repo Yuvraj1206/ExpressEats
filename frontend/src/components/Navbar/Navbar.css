@@ -88,7 +88,7 @@ nav .left-nav .menu-btn{
   color: black;
   font-size: 3.5vh;
   margin-bottom: 35px;
-  width: 120px;
+  width: 150px;
 }
 .side-btn:hover{
   text-decoration: none;
@@ -116,6 +116,19 @@ nav .left-nav .menu-btn{
   }
   nav .left-nav .menu-btn{
     display: block;
+  }
+  .sidebar .close-btn{
+    margin-top: 180px;
+    margin-bottom: 0;
+  }
+  .sidebar ul{
+    list-style: none;
+    margin-top: 9vh;
+    height: 80%;
+    margin-left: 30px;
+  }
+  .sidebar h1{
+    font-size: 5.5vh;
   }
 }
 

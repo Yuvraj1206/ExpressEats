@@ -64,6 +64,7 @@
 @media (max-width: 600px) {
   .search-container {
       padding: 5px;
+      min-width: 270px;
   }
   .search-container input {
       font-size: 14px;
@@ -93,4 +94,15 @@
 .head-container h3{
   font-size: 4vh;
   padding: 3px 5px;
+}
+
+@media (max-width:350px) {
+  .head-container h1{
+    font-size: 6vh;
+  }
+  
+  .head-container h3{
+    font-size: 2.5vh;
+    padding: 3px 20px;
+  }
 }
