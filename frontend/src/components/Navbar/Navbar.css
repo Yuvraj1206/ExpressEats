@@ -26,6 +26,10 @@ nav{
 nav .left-nav .menu-btn{
   display: none;
 }
+nav .left-nav b{
+  display: none;
+}
+
 
 .right-nav{ 
   display: flex;
@@ -117,6 +121,10 @@ nav .left-nav .menu-btn{
   nav .left-nav .menu-btn{
     display: block;
   }
+  nav .left-nav b{
+    display: block;
+  }
+
   .sidebar .close-btn{
     margin-top: 180px;
     margin-bottom: 0;

@@ -96,7 +96,10 @@ const Navbar = () => {
             onClick={openSidebar}
           >
             <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-          </svg>
+          </svg>{" "}
+          <b style={{ color: "red" }}>
+            {foodItems.length !== 0 ? foodItems.length : ""}
+          </b>
           <Link to="/" className="home-butn">
             HOME
           </Link>
