@@ -14,6 +14,9 @@ const Card = (props) => {
   const cart = useCart(); //context api
 
   const handleAddToCart = async () => {
+    if (!localStorage.getItem("authToken")) {
+      alert("LogIn to view Cart and place order");
+    }
     for (const item of cart.state) {
       if (item.id === props.foodItem._id) {
         if (item.size === size) {
